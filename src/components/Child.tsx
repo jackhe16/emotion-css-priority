@@ -1,21 +1,17 @@
 import { defineComponent } from "vue";
-import { css, cx } from "@emotion/css";
+import { css } from "@emotion/css";
 
 export default defineComponent({
-  inheritAttrs: false,
   props: {
     msg: { type: String, default: "" },
   },
-  setup(props, ctx) {
+  setup(props) {
     return () => {
       return (
         <div
-          class={cx(
-            css`
-              font-size: 16px;
-            `,
-            ctx.attrs.class as string
-          )}
+          class={css`
+            font-size: 16px;
+          `}
         >
           {props.msg}
         </div>
